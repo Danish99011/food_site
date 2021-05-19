@@ -1,0 +1,263 @@
+/* css reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* css variables */
+
+:root {
+    --navbar-height: 90px;
+}
+
+
+/* Navigation bar */
+
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    /* note that here we did position relative because due to navbar::before waala tag the background was way more than the navbar we set and hence we want it to fit right there, so used position relative */
+}
+
+
+/* Navigation bar:logo and image */
+
+#logo {
+    margin: 20px 20px;
+}
+
+#logo img {
+    height: 69px;
+    margin: -6px 7px;
+}
+
+
+/* Navigation bar: list style */
+
+#navbar ul {
+    display: flex;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/* here we have used navbar mein psedu-selectors BEFORE taki navbar mein black background rhe */
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+#navbar ul li {
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 3px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+#navbar ul li a:hover {
+    background: white;
+    color: black;
+}
+
+
+/* home section */
+
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 200px;
+    margin-bottom: 150px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before {
+    content: "";
+    background: url('background_home.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+}
+
+#home h1 {
+    color: white;
+    text-align: center;
+    /* font-family: 'Pacifico', cursive; */
+    /* font-family: 'Lobster', cursive; */
+    /* font-family: 'Courgette', cursive; */
+    /* font-family: 'Kufam', cursive; */
+    /* font-family: 'Lato', sans-serif; */
+    /* font-family: 'Baloo 2', cursive; */
+}
+
+#home p {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+/* services section */
+
+.services-container {
+    margin-top: 190px;
+}
+
+#services {
+    margin: 20px;
+    display: flex;
+}
+
+#services .box {
+    border: 2px solid brown;
+    margin: 10px 30px 10PX 30PX;
+    border-radius: 30px;
+    padding: 34px;
+    background-color: rgb(235, 231, 231);
+}
+
+#services .box img {
+    height: 160px;
+    margin: auto;
+    /*here margin auto will work only when the display is block */
+    display: block;
+}
+
+
+/* client section */
+
+#client-section {
+    position: relative;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* no need of below as phone size mein dikkat but full screen mein dikkat */
+
+#clients img {
+    height: 70px;
+}
+
+.client-items {
+    padding: 34px;
+}
+
+#client-section::before {
+    content: "";
+    position: absolute;
+    background: url('client_back.jpg');
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+
+/* contact section */
+
+#contact {
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    margin-top: 50px;
+}
+
+#contact::before {
+    content: "";
+    background: url('pizza.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    ;
+    eft: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+#contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+
+#contact-box input,
+#contact-box textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.1rem;
+}
+
+#contact-box form {
+    width: 40%;
+}
+
+#contact-box label {
+    font-size: 1.3 rem;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+
+/* utility class 
+which means ki jagah jagah use kr sakte whenever need */
+
+.h-primary {
+    font-size: 3.3rem;
+    padding: 12px;
+    font-family: 'Lato', sans-serif;
+}
+
+.h-secondary {
+    font-size: 1.3rem;
+    padding: 12px;
+    font-family: 'Lato', sans-serif;
+}
+
+.btn {
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: rgb(138, 63, 63);
+    color: white;
+    margin: 18px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
