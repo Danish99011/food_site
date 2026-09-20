@@ -1,0 +1,40 @@
+{
+  "commit": null,
+  "files": {
+    ".claude/agents/security-guard.md": "6ffbdf51f457d7c0f774952ad56060b63b1d37bce4240c8bff906ec35e89e9ad",
+    ".claude/settings.json": "d0089efd4d61a2ab5fc416fa3797072f5652ccd44bc1842f36de2379793126ba",
+    ".github/workflows/secure-check.yml": "2f2a1f8f74fc93a36c1b775f67ecd7ba7e258788f6143f6ffd2326a2a4e3cbc3",
+    ".secure-check.toml": "99b336e4b50fb678ef16667e6731193397174b3f160c95b2c62cffadc3c9328b",
+    ".secure-check/README.md": "2ae6f9bedbbfad8a78eaaf876fe3c1b4e56dd71460ad17a3299413475cd6ef65",
+    ".secure-check/hooks/pre-commit": "d2f3399eafa73c3a83a3497ccf33ba888a18a71e8d796f81a9485a369c6bc6d4",
+    ".secure-check/hooks/pre-push": "f9fe14b7994e8c7e55e3279df50faaa28dc714908b436df2c6aeeb946e22d83b",
+    ".secure-check/lib/secure_check/__init__.py": "002dbf6858b6b92368d4e4b87b45dacab03a709a04f6cc6e90dead415225a0bb",
+    ".secure-check/lib/secure_check/__main__.py": "13a1a5b340cdcfc1902b62be90e508c7c71886000d5bf087e7854aadf09fb35e",
+    ".secure-check/lib/secure_check/agents.py": "d3ec479ea87007c2de20758627384b11aae7c46135084191d2bc7587b92bd9b4",
+    ".secure-check/lib/secure_check/audit.py": "ded9bc13d06a3b98ed33eca145bfbce5556758c6d214c8c55fc21995fb9b6473",
+    ".secure-check/lib/secure_check/cli.py": "6a8b3031179a0144f0e140f63cca0b2ace2544a5ac913e00b00e5edfceeb98c5",
+    ".secure-check/lib/secure_check/files.py": "753821009e8ff7589b0186a1f85b58875e85687ed5069fdb79a2225f325078a2",
+    ".secure-check/lib/secure_check/findings.py": "a704f06b7bbad8abfa32d157f886ae7ec6b5ba262a000d024a0052d70178c831",
+    ".secure-check/lib/secure_check/fleet.py": "5a1aa956ddfbf208611f188b8a2b2be65f36becb12fa12a3deaeb054af800886",
+    ".secure-check/lib/secure_check/gitscan.py": "b05af22bc3627e16c8d7e51a4eca4402fde8e295f3b0c2506b9217e1647f80d0",
+    ".secure-check/lib/secure_check/hook.py": "69449421232055074d6fba5ac70ab975f5c0a04f7ab83ed9be844dfd1e586396",
+    ".secure-check/lib/secure_check/installer.py": "fffdd5f4ef06db2797dd1d1d526d9d6767e5504d4a074f87c0ce65cb3f0398b8",
+    ".secure-check/lib/secure_check/integrity.py": "4349cd4485bb8e42c279fe598603effaf6933c6f5f4716dd2d681b79a9e54966",
+    ".secure-check/lib/secure_check/patterns.py": "4809fdd9baccd52f4d2dbe17943ada32ef04792524c2ab3b1a41a9ecba1694d0",
+    ".secure-check/lib/secure_check/policy.py": "171e1f0b1d90d13270c8405da62e3603a6d9748e46306be682745edd1429c74c",
+    ".secure-check/lib/secure_check/profiles.py": "065232298a4fa6c9cb73761d0efefd0ef5ad448e3b75aed33589cb762d9cb85b",
+    ".secure-check/lib/secure_check/repo.py": "71f1e51fbe9e02cc520ca33249b8a3085435d1d235865595a56aba8e6c0daa8a",
+    ".secure-check/lib/secure_check/report.py": "4f5af5e3a939f320a5ad259a642a4917dd491f6b902dabc0b03cfbb012167eb8",
+    ".secure-check/lib/secure_check/secrets.py": "7885dcb9f22652df5e42bff1f92bb117b39fb5c9bd1ad7d12a18d7bb09ffdfd9",
+    ".secure-check/lib/secure_check/templates.py": "b14444ec454b79f75622268bc11a7685bf0a8a22a05c95fb31afd44cb36966e5",
+    ".secure-check/lib/secure_check/util.py": "34781bc71282604af9d1eff9867343affa7b67cf13012a0104907400d5264d13"
+  },
+  "protected_paths": [
+    ".claude/**",
+    "CLAUDE.md",
+    ".github/workflows/**",
+    ".secure-check.toml",
+    ".secure-check/**"
+  ],
+  "version": 1
+}

@@ -1,0 +1,40 @@
+name: secure-check
+# The server-side wall. Runs on every push and PR, and a full audit every day.
+# A failure here emails the repository owner (GitHub default notification).
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 3 * * *"   # daily 03:17 UTC (08:47 IST): full audit incl. history
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: secure-check
+        env:
+          PYTHONPATH: .secure-check/lib
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          set -u
+          ZERO=0000000000000000000000000000000000000000
+          if [ "$EVENT" = "push" ] && [ "$BEFORE" != "$ZERO" ] && git cat-file -e "$BEFORE" 2>/dev/null; then
+            python3 -m secure_check scan --range "$BEFORE..$AFTER" --format github
+          elif [ "$EVENT" = "pull_request" ]; then
+            python3 -m secure_check scan --range "origin/$BASE_REF..HEAD" --format github
+          else
+            python3 -m secure_check audit --format github
+          fi

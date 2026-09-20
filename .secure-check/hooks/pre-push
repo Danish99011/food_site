@@ -1,0 +1,6 @@
+#!/bin/sh
+# secure-check pre-push hook: scans every commit about to leave this machine,
+# and refuses pushes that shrink append-only files or edit archives.
+ROOT="$(git rev-parse --show-toplevel)" || exit 0
+export PYTHONPATH="$ROOT/.secure-check/lib:$ROOT${PYTHONPATH:+:$PYTHONPATH}" PYTHONDONTWRITEBYTECODE=1
+exec python3 -m secure_check pre-push "$@"

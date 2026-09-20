@@ -1,0 +1,6 @@
+#!/bin/sh
+# secure-check pre-commit hook: refuses a commit that stages a credential or a
+# credential-named file. Installed by `secure-check install-hooks`.
+ROOT="$(git rev-parse --show-toplevel)" || exit 0
+export PYTHONPATH="$ROOT/.secure-check/lib:$ROOT${PYTHONPATH:+:$PYTHONPATH}" PYTHONDONTWRITEBYTECODE=1
+exec python3 -m secure_check scan --staged --quiet-ok

@@ -1,0 +1,40 @@
+# secure-check policy. Docs: https://github.com/Danish99011/Secure-check
+[secure_check]
+fail_on = "high"          # critical|high|medium|low -- lowest severity that fails a run
+
+[secrets]
+allow_paths = []          # globs never scanned for secrets (test fixtures only)
+allow_patterns = []       # regexes; a matched VALUE is ignored
+allow_fingerprints = []   # sha256 prefixes (>=8 hex) of known fakes, from the report
+disable_rules = []        # pattern ids to switch off
+
+[files]
+extra_dangerous = []      # regexes on the repo-relative path
+allow_paths = [".env.example", ".env.sample", ".env.template"]
+
+[gitignore]
+extra_canaries = []       # more paths that must be ignored
+
+[integrity]
+# Files that change only with the owner's explicit approval. Any change is a
+# finding in `verify`, in the pre-push hook and in CI.
+protected_paths = [
+  ".claude/**",
+  "CLAUDE.md",
+  ".github/workflows/**",
+  ".secure-check.toml",
+  ".secure-check/**",
+]
+# Files that may only grow (ledgers, scoreboards). A removed line is critical.
+append_only_paths = []
+# Files that, once committed, are never modified or deleted (archives).
+immutable_paths = []
+
+[history]
+max_commits = 3000
+
+[agents]
+require_claude_hooks = true
+require_git_hooks = true
+block_force_push = true
+block_direct_push_to = []   # e.g. ["main"] to force pull requests
